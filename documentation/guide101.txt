@@ -1,0 +1,37 @@
+1-|npm int > enter loop > exit loop
+1-|npm install express
+1-|npm install --save-dev nodemon 
+1-|run live server update when developing with nodemon => nodemon appName.js
+1-|npm install graphql express-graphql
+1-|npm install lodash
+
+2-|graphql needs to configure oddly and graphiql in node.js is a middleware for handling req // MIDDLEWARE => need schema to work
+2-|app.use('/graphql', graphqlHTTP({
+2-|}));
+2-|app.use('/graphql', graphqlHTTP({
+2-|   schema: schema, // we will use the imported schema from the schema folder and use schema.js file that was imported
+2-|   graphiql: true // we want to use this grapiql tool when we go to this endpoint (middleware)
+2-|}));
+
+3-|when it comes to relation between obj => i added a new field to books, by relating an entity obj  {name: 'Name of the Wind', genre: 'Fantasy', id: '1', authorId: '1'}, 
+3-|graphql knowledge => ({ THE RESOLVE FUNCTION IS RESPONSIBLE FOR GOING OUT AND GRABBING DATA, USING args from user (in our case GraphiQL)})
+3-|when we use resolve func in our GraphQLObjectType RootQuery, when someone req a book or author => the resolve function is responseible for looking at the actual data and returning what is needed. graphql takes that data and send back to the user the exact data the user wants
+3-|resolve(parent, args) where args are the users arguments for instance a name or a id of a book. resolve param parent is a Parent object that returns resultsalt. 
+
+4-|RootQuery
+4-|Relations in GraphQLObjectType are embedded or nestle documentes. you can send req inside the book object 
+4-|{
+4-| RootQuery>
+4-|   Book(id: 2) {
+4-|      name
+4-|      genre
+4-|      Author {
+4-|         name
+4-|      }
+4-|   }
+4-|    
+
+4-|}
+5-|{
+5-|   book(id: 1) {name,id,author: id}
+5-|}
