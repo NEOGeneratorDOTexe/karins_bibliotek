@@ -1,3 +1,4 @@
+0-|to start app> go cd with terminal to server folder in project> you see app.js there right? go do this command > node app.js and exit app with cntrl + c. || nodemon app.js
 1-|npm int > enter loop > exit loop
 1-|npm install express
 1-|npm install --save-dev nodemon 
