@@ -4,8 +4,8 @@ const schema = require('./schema/schema');
 const mongoose = require('mongoose');
 
 const app = express();
-
-mongoose.connect('mongodb+srv://db2-stu-33:Nsm63zEd4QYU8r3H@pureballast-uryl6.azure.mongodb.net')
+const DB_URL = "";
+mongoose.connect(DB_URL)
 mongoose.connection.once('open', () => {
   console.log('connected to database');
 }) 
