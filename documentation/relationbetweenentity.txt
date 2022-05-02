@@ -1,0 +1,31 @@
+query {
+ 	book(id:2) {
+    name
+    genre
+    author{
+      name
+      age
+      id
+    }
+  }
+}
+the code above is a res parent
+
+const BookType = new GraphQLObjectType({
+    name: 'Book',
+    fields: () => ({
+        id: {type: GraphQLID},
+        name: {type: GraphQLString},
+        genre: {type: GraphQLString},
+        author: {
+            type:AuthorType,
+            resolve(parent, args) {
+                var stringObjectRequest = `{
+                    author(id: ${args.id}) {name, id}
+                  }`;// sql injection == bad. leave server forever. == banned. add entity skill.;
+                console.log('This is parent: ' + parent.toString() + parent + "och detta har anropats" + stringObjectRequest);
+                return _.find(authors, {id: parent.authorId})
+            }
+        }
+    })
+});

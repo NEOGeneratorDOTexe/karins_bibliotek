@@ -29,3 +29,43 @@
 #   Auto Complete:  Ctrl-Space (or just start typing)
 #
 
+query {
+ 	book(id:2) {
+    name
+    genre
+    author{
+      name
+      age
+      id
+    }
+  }
+}
+
+{
+  author(id: 2) {
+    name
+    age
+    books {
+      id
+    	name
+    }
+  }
+}
+
+{
+  books{
+    name
+    genre
+  }
+}
+
+{
+  books{
+    name
+    genre
+    author{
+      name 
+      age
+    }
+  }
+}

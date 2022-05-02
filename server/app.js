@@ -1,18 +1,37 @@
-const express = require('express');
-const { graphqlHTTP } = require('express-graphql');
+const express = require('express'); // npm install express
+const { graphqlHTTP } = require('express-graphql'); // npm install express-graphql
 const schema = require('./schema/schema');
+const mongoose = require('mongoose');
 
 const app = express();
 
+mongoose.connect('mongodb+srv://db2-stu-33:Nsm63zEd4QYU8r3H@pureballast-uryl6.azure.mongodb.net')
+mongoose.connection.once('open', () => {
+  console.log('connected to database');
+}) 
+
+const PORT = 300;
 // MIDDLEWARE
 app.use('/graphql', graphqlHTTP({
     schema: schema,
-    graphiql: true // we want to use thise grapiql tool when we go to this endpoint (middleware)
+    graphiql: true // we want to use this grapiql tool when we go to this endpoint (middleware)
 }));
 
-app.listen(300, () => {
-    console.log('now listening for request on port 300')
+// this code is the first code that is visable in terminal by the node AppName.js (command)
+app.listen(PORT, () => {
+    console.log('now listening for request on port ' + PORT)
 });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,8 +41,32 @@ app.listen(300, () => {
 // GET method (api-route/endpoint)
 app.get('/', (req, res) => {
     res.send('This route path will match requests to the root route, /.')
-    console.log('app.get(`/`, (req,res) was called)')
+    console.log('A user has requested the root endpoint/route')
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // POST method route
