@@ -69,3 +69,36 @@ query {
     }
   }
 }
+
+// mutation query
+// standard syntax:
+'''
+mutation {
+  myFunc(argkey1: "Value1", argkey2: "Value2") {
+    argkey1
+    argkey2
+  }
+}
+''' 
+
+
+''' first create your mutation for instance:'''
+mutation 
+{ 
+  addAuthor(name: "Benjamin_Appelberg", age: 25){
+    name 
+    age
+  }
+}
+
+addAuthor is an post method.
+
+Feeling Is the Secret (1944) by Neville Goddard
+''' addBook() '''
+
+mutation {
+  addBook(name: "Feeling_Is_the_Secret", genre: "Feeling-Spirit",authorId: "626faa3035a66c36c3ca5a25"){
+    name
+    genre
+  }
+}

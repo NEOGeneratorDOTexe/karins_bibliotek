@@ -9,7 +9,7 @@ query {
     }
   }
 }
-the code above is a res parent
+the code above is the resolve func param 'parent'
 
 const BookType = new GraphQLObjectType({
     name: 'Book',

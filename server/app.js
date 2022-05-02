@@ -2,12 +2,12 @@ const express = require('express'); // npm install express
 const { graphqlHTTP } = require('express-graphql'); // npm install express-graphql
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
-
+const MONGO_DB_PORT = null; // put desired port number; e.i. 27017
 const app = express();
-const DB_URL = "";
+const DB_URL = `mongodb://localhost:${MONGO_DB_PORT}`;
 mongoose.connect(DB_URL)
 mongoose.connection.once('open', () => {
-  console.log('connected to database');
+  console.log('Program sucessfully opened a connection to MongoDB server');
 }) 
 
 const PORT = 300;

@@ -1,5 +1,5 @@
-0-|to start app> go cd with terminal to server folder in project> you see app.js there right? go do this command > node app.js and exit app with cntrl + c. || nodemon app.js
-1-|npm int > enter loop > exit loop
+0-|to start app> go cd with terminal to folder 'server' in project> you see app.js there right? go do this command in term > <node app.js> and exit app with <ctrl + c>. || <nodemon app.js>
+1-|npm init > enter loop > exit loop
 1-|npm install express
 1-|npm install --save-dev nodemon 
 1-|run live server update when developing with nodemon => nodemon appName.js
@@ -38,4 +38,7 @@
 5-|}
 
 
-6-|npm install mongoose || npm install mongoose --save
+6-| [npm install mongoose]|| npm install mongoose --save
+
+7-| Mutations in graphQL are objects that tell the how the program can mutate data
+7-
