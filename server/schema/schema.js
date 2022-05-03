@@ -153,3 +153,4 @@ module.exports = new GraphQLSchema({
     mutation: Mutation // mutation object that helps us önsvärt mutera data.
 });
 
+

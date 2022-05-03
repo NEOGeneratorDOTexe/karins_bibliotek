@@ -1,0 +1,10 @@
+body {
+  background-color: #18c412;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -4,23 +4,37 @@ const schema = require('./schema/schema');
 const mongoose = require('mongoose');
 const MONGO_DB_PORT = 27017; // put desired port number; e.i. 27017
 const app = express();
+const cors = require('cors');
+
+/* DB DRIVER MONGOOSE CLIENT DOCKER  */
 const DB_URL = `mongodb://localhost:${MONGO_DB_PORT}`;
 mongoose.connect(DB_URL)
 mongoose.connection.once('open', () => {
   console.log('Program sucessfully opened a connection to MongoDB server');
 }) 
+ 
 
 const PORT = 300;
-// MIDDLEWARE
+
+// allow crossorigin req
+
+app.use(cors());
+/* 
+MIDDLEWARE  if you are having issues around 2:41:00, after the CORS package is enabled, use
+app.use(cors()) 
+instead of app.use(cors). 
+i.e invoke the cors function. 
+*/
 app.use('/graphql', graphqlHTTP({
     schema: schema,
     graphiql: true // we want to use this grapiql tool when we go to this endpoint (middleware)
 }));
 
-// this code is the first code that is visable in terminal by the node AppName.js (command)
+// this code is the first code thats is visable in terminal by the node AppName.js (command)
 app.listen(PORT, () => {
     console.log('now listening for request on port ' + PORT)
 });
+
 
 
 

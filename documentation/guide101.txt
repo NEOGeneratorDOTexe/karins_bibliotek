@@ -1,12 +1,15 @@
 -1-| graphql != javascript. 
 0-|to start app> go cd with terminal to folder 'server' in project> you see app.js there right? go do this command in term > <node app.js> and exit app with <ctrl + c>. || <nodemon app.js>
 1-|npm init --yes
-1-|npm install express
-1-|npm install --save-dev nodemon 
+1-|npm install 'express'
+1-|npm install --save-dev 'nodemon' 
 1-|run live server update when developing with nodemon => nodemon appName.js
-1-|npm install graphql express-graphql
-1-|npm install lodash
-
+1-|npm install 'graphql express-graphql'
+1-|npm install 'lodash'
+2-| init => OS
+OS
+för 1 år sedan (redigerad)
+if someone got a nodemon error "TypeError: graphqlHTTP is not a function" at 29:00, wrap const graphqlHTTP in curly brackets like this: const { graphqlHTTP } = require('express-graphql'); 
 2-|graphql needs to configure oddly and graphiql in node.js is a middleware for handling req // MIDDLEWARE => need schema to work
 2-|app.use('/graphql', graphqlHTTP({
 2-|}));
@@ -39,7 +42,7 @@
 5-|}
 
 
-6-| [npm install mongoose]|| npm install mongoose --save
+6-| [npm install 'mongoose']|| npm install mongoose --save
 
 7-| Mutations in graphQL are objects that tell the how the program can mutate data
 7-
@@ -48,4 +51,6 @@
 8-| apollo talk with express app.
 
 9-|  graphql-playlist % npm install create-react-app -g 
-10-| npm install @apollo/client graphql
+10-| npm install '@apollo/client graphql'
+11-| npm install '@apollo/react-hoc' ''' next() import { graphql } from '@apollo/react-hoc'; ''' 
+12-| npm install 'cors'
