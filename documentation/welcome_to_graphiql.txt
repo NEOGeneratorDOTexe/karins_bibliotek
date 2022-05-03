@@ -90,6 +90,7 @@ mutation
     age
   }
 }
+mutation {addAuthor(name: "J.K Rowling", age: 56){name age}}
 
 addAuthor is an post method.
 
@@ -102,3 +103,57 @@ mutation {
     genre
   }
 }
+
+mutation {
+  addBook(name: "Harry_Potter_and_the_Philosopher's_Stone", genre: "Feeling-Spirit",authorId: "626faa3035a66c36c3ca5a25"){
+    name
+    genre
+  }
+}
+
+''' get all books '''
+{
+  books {
+    name
+    genre
+  }
+}
+
+''' clean join ''' // ge alla böcker som finns i db och ta med författarna i db 
+query {
+  books{ 
+    name
+    author{
+      name
+    }
+  }
+}
+
+''' clean join end '''
+qcomp
+{
+  books {
+    name
+    genre
+    author{
+      name
+      age
+    }
+  }
+}
+qcomp
+
+
+{
+  authors{
+    name
+    age
+    books{
+      name
+    }
+  }
+}
+
+mutation
+
+
