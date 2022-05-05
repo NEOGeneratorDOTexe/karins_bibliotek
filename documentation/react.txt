@@ -1,0 +1,45 @@
+/*
+
+<The DOM>
+The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+
+For example, the DOM specifies that the querySelectorAll method in this code snippet must return a list of all the <p> elements in the document:
+
+const paragraphs = document.querySelectorAll("p");
+// paragraphs[0] is the first <p> element
+// paragraphs[1] is the second <p> element, etc.
+alert(paragraphs[0].nodeName);
+
+</ The Dom>
+*/
+
+
+/* <ReactDOM>
+The react-dom package provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside the React model if you need to.
+
+import * as ReactDOM from 'react-dom';
+
+If you use ES5 with npm, you can write:
+
+var ReactDOM = require('react-dom');
+
+The react-dom package also provides modules specific to client and server apps:
+
+    react-dom/client
+    react-dom/server
+
+Overview
+
+The react-dom package exports these methods:
+
+    createPortal()
+    flushSync()
+
+These react-dom methods are also exported, but are considered legacy:
+
+    render()
+    hydrate()
+    findDOMNode()
+    unmountComponentAtNode()
+    </ ReactDOM>
+*/

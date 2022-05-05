@@ -52,5 +52,6 @@ if someone got a nodemon error "TypeError: graphqlHTTP is not a function" at 29:
 
 9-|  graphql-playlist % npm install create-react-app -g 
 10-| npm install '@apollo/client graphql'
-11-| npm install '@apollo/react-hoc' ''' next() import { graphql } from '@apollo/react-hoc'; ''' 
+11-| npm install '@apollo/react-hoc' ''' 
+11-|import { graphql } from '@apollo/react-hoc';  // or import { graphql } from '@apollo/client/react/hoc';
 12-| npm install 'cors'

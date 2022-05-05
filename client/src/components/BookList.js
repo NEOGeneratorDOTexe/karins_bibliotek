@@ -1,28 +1,24 @@
-/* Copyright portofOS@protonmail.com 2022-2400*/import React, { Component } from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { gql } from '@apollo/client';
-import { graphql } from '@apollo/react-hoc';  // or import { graphql } from '@apollo/client/react/hoc';
-const GET_BOOKS = gql`
-    query GetBooks {
-        books{
-            name
-            id 
-        }
-    }
-`;
+import { graphql } from '@apollo/react-hoc'; 
+import { getBooksQuery } from '../queries/queries';
+
+
+/*%%%% %%%% %%%% %%%% BookList React-Component  %%%% %%%% %%%% %%%% */
 class BookList extends Component {
   displayBooks() {
     var data = this.props.data;
     if (data.loading) {
-      return (<div>Loading data... // I am a return divtag from class Booklist (ext: comp) :)</div>)
-    } else { // no es6 func. do not like
-      return data.books.map(function eachFiredFuncCallBackThisNextOnItem(bookInBookList) {
+      console.log("I am  currently loading books atm...")
+      return (<div>Loading books</div>)
+    } else { /* no es6 func. do not like.*/
+      return data.books.map(function fireCallback(individBook_from_books_in_app_js_gql) {
         return (
-          <li key={bookInBookList.id}>{bookInBookList.name}</li>
+          <li key={individBook_from_books_in_app_js_gql.id}>{individBook_from_books_in_app_js_gql.name}</li>
         );
       })
     }
-  }
+  } 
   render() {
     console.log("render() called");
     return (
@@ -36,4 +32,4 @@ class BookList extends Component {
 } // BookList Comp end
 /* BY EXPORTING THIS GRAPHQL we have acess to everything that comes back from this query */
 // the data is stored in the react props comp
-export default graphql(GET_BOOKS)(BookList); // bind this query to this object (or more precise component)
+export default graphql(getBooksQuery)(BookList); // bind this query to this object (or more precise component)
