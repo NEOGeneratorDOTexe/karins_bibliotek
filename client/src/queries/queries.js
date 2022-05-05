@@ -35,21 +35,16 @@ const addBookMutation = gql`
     }
 `;
 
+/*
+    queryMethod($id_user_passed_arguments: GraphQLTypeNotNull)
+    $<-param_id
+*/
 const getBookQuery = gql`
-query($id: String!){
+query($id: ID){
     book(id: $id ) {
         id
         name
         genre
-        author{
-            id
-            name
-            age
-            books{
-                id
-                name
-            }
-        }
     }
 }
 `;

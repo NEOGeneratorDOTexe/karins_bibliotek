@@ -55,3 +55,13 @@ if someone got a nodemon error "TypeError: graphqlHTTP is not a function" at 29:
 11-| npm install '@apollo/react-hoc' ''' 
 11-|import { graphql } from '@apollo/react-hoc';  // or import { graphql } from '@apollo/client/react/hoc';
 12-| npm install 'cors'
+13-| // add 1 query to your component
+13-| export default graphql(yourGqlQuery)(yourReactComponent); 
+
+13-| // add more than 1 query to your component
+13-| import { flowRight as compose } from 'lodash'; 
+13-| export default compose(
+13-|  graphql(gqlQuery0, { name: "gqlQuery0" }),
+13-|  graphql(gqlQuery1, { name: "gqlQuery1" }),
+13-|  graphql(gqlQuery2, { name: "gqlQuery2" })
+13-|)(AddBook);
